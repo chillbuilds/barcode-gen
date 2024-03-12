@@ -22,13 +22,13 @@ let updateBarcodeSize = () => {
 
 let checkLocalStorage = () => {
     if(localStorage.getItem('barcode-width') == undefined || localStorage.getItem('barcode-width') == ''){
-        localStorage.setItem('barcode-width', '200')
+        localStorage.setItem('barcode-width', '150')
     }
     if(localStorage.getItem('barcode-height') == undefined || localStorage.getItem('barcode-height') == ''){
-        localStorage.setItem('barcode-height', '160')
+        localStorage.setItem('barcode-height', '100')
     }
     if(localStorage.getItem('barcode-margin') == undefined || localStorage.getItem('barcode-margin') == ''){
-        localStorage.setItem('barcode-margin', '0')
+        localStorage.setItem('barcode-margin', '4')
     }
     $('#barcode-width-input').val(localStorage.getItem('barcode-width'))
     $('#barcode-height-input').val(localStorage.getItem('barcode-height'))
