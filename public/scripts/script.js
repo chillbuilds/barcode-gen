@@ -83,4 +83,13 @@ $(document).ready(function(){
     $('#hide-input-icon').on('click', () => {
         $('#input-container').slideToggle()
     })
+
+    $('#print-icon').on('click', () => {
+        $('#input-container').attr('style', 'display:none')
+        window.print()
+    })
+
+    window.onafterprint = function() {
+        $('#input-container').attr('style', 'display:block')
+    }
 })

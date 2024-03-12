@@ -45,3 +45,7 @@ input {
 #hide-input-icon {
     cursor: pointer;
 }
+
+#print-icon {
+    cursor: pointer;
+}
