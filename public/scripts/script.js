@@ -86,10 +86,12 @@ $(document).ready(function(){
 
     $('#print-icon').on('click', () => {
         $('#input-container').attr('style', 'display:none')
+        $('.icon').attr('style', 'display:none')
         window.print()
     })
 
     window.onafterprint = function() {
         $('#input-container').attr('style', 'display:block')
+        $('.icon').attr('style', 'display:block')
     }
 })
