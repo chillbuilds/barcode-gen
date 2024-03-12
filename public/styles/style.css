@@ -31,8 +31,8 @@ input {
 }
 
 #input-container {
-    margin: 40px;
-    margin-top: 0px;
+    margin: 10px;
+    height: 90px;
     padding: 20px;
 }
 
@@ -40,10 +40,6 @@ input {
     position: relative;
     float: right;
     padding: 10px 20px;
-}
-
-#barcode-container {
-    padding-top: 30px;
 }
 
 #hide-input-icon {
