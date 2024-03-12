@@ -21,7 +21,7 @@ input {
 
 .spinner-container {
     display: none;
-    position: absolute;
+    position: fixed;
     top: 220px;
     text-align: center;
     width: 100%;
@@ -47,7 +47,7 @@ input {
     right: 0;
     top: 0;
     background: rgba(0,0,0,0.5);
-    z-index: 0;
+    z-index: 1;
 }
 
 @keyframes spin {
