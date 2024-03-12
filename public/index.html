@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>node express server</title>
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body>
+    
+    <div id="input-container">
+        <input id="barcode-input" type="file">
+        <div id="barcode-settings" style="background: rgba(255,255,255,0.2);">
+            <div class="barcode-settings-text">width:</div> <input type="number" class="barcode-size-input" id="barcode-width-input"><br>
+            <div class="barcode-settings-text">height:</div> <input type="number" class="barcode-size-input" id="barcode-height-input"><br>
+            <div class="barcode-settings-text">spacing:</div> <input type="number" class="barcode-size-input" id="barcode-margin-input">
+        </div>
+    </div>
+    
+    <div id="barcode-container">
+
+    </div>
+
+
+    <script src="./scripts/jquery.js"></script>
+    <script src="./scripts/barcode.js"></script>
+    <script src="./scripts/script.js"></script>
+</body>
+</html>
