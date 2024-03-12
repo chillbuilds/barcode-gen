@@ -29,7 +29,7 @@ input {
 
 #input-container {
     margin: 40px;
-    margin-top: 20px;
+    margin-top: 0px;
     padding: 20px;
 }
 
@@ -40,5 +40,9 @@ input {
 }
 
 #barcode-container {
-    padding-top: 40px;
+    padding-top: 30px;
+}
+
+#hide-input-icon {
+    cursor: pointer;
 }

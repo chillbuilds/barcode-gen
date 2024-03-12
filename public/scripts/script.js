@@ -79,4 +79,8 @@ $(document).ready(function(){
         }
         updateBarcodeSize()
     })
+
+    $('#hide-input-icon').on('click', () => {
+        $('#input-container').slideToggle()
+    })
 })

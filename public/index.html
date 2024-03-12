@@ -9,10 +9,13 @@
     <link rel="stylesheet" href="../styles/style.css">
 </head>
 <body>
+
+    <div id="hide-input-icon">
+        <img style="width:22px; position: fixed; top:10px; right:10px; opacity: 0.5;" src="./images/hide.png">
+    </div>
     
     <div id="input-container">
         <input id="barcode-input" type="file">
-        <!-- single barcode: <input id="barcode-input-single" type="text"> -->
         <div id="barcode-settings" style="background: rgba(255,255,255,0.2);">
             <div class="barcode-settings-text">width:</div> <input type="number" class="barcode-size-input" id="barcode-width-input"><br>
             <div class="barcode-settings-text">height:</div> <input type="number" class="barcode-size-input" id="barcode-height-input"><br>
