@@ -10,11 +10,18 @@
 </head>
 <body>
 
+    <div style="z-index: 1;" class="spinner-bg"></div>
+
     <div class="icon" id="hide-input-icon">
         <img style="width:22px; position: fixed; top:42px; right:10px; opacity: 0.5;" src="./images/hide.png">
     </div>
     <div class="icon" id="print-icon">
         <img style="width:22px; position: fixed; top:10px; right:10px; opacity: 0.5;" src="./images/print.png">
+    </div>
+
+    <div class="spinner-container">
+        <div class="spinner"></div><br>
+        <div style="color: white; font-weight: bold; z-index: 1001;" >completed: <span id="completedBarcodes"></span> of <span id="totalBarcodes"></span></div>
     </div>
 
     <div id="input-container">
@@ -29,7 +36,6 @@
     <div id="barcode-container">
 
     </div>
-
 
     <script src="./scripts/jquery.js"></script>
     <script src="./scripts/barcode.js"></script>
