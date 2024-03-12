@@ -1,11 +1,15 @@
 let generateBarcodes = (barcodeArr) => {
     barcodeArr.forEach(barcode => {
-        let barcodeWidth = localStorage.getItem('barcode-width')
-        let barcodeHeight = localStorage.getItem('barcode-height')
-        let barcodeMargin = localStorage.getItem('barcode-margin')
-        $('#barcode-container').append(`<img class="barcode-img" id="barcode-${barcode}">`)
-        $(`#barcode-${barcode}`).attr('style', `width: ${barcodeWidth}px; height: ${barcodeHeight}px; padding-left:${barcodeMargin}px; padding-bottom:${barcodeMargin}px`)
-        JsBarcode(`#barcode-${barcode}`, `${barcode}`)
+        if(barcode == ''){
+            return
+        }else{
+            let barcodeWidth = localStorage.getItem('barcode-width')
+            let barcodeHeight = localStorage.getItem('barcode-height')
+            let barcodeMargin = localStorage.getItem('barcode-margin')
+            $('#barcode-container').append(`<img class="barcode-img" id="barcode-${barcode}">`)
+            $('.barcode-img').attr('style', `width: ${barcodeWidth}px; height: ${barcodeHeight}px; padding-left: ${barcodeMargin}px;`)
+            JsBarcode(`#barcode-${barcode}`, `${barcode}`)
+        }
     })
 }
 
@@ -13,7 +17,7 @@ let updateBarcodeSize = () => {
     let barcodeWidth = localStorage.getItem('barcode-width')
     let barcodeHeight = localStorage.getItem('barcode-height')
     let barcodeMargin = localStorage.getItem('barcode-margin')
-    $('.barcode-img').attr('style', `width: ${barcodeWidth}px; height: ${barcodeHeight}px; padding-left: ${barcodeMargin}px; padding-bottom: ${barcodeMargin}px;`)
+    $('.barcode-img').attr('style', `width: ${barcodeWidth}px; height: ${barcodeHeight}px; padding-left: ${barcodeMargin}px;`)
 }
 
 let checkLocalStorage = () => {
