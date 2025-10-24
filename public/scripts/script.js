@@ -6,7 +6,6 @@ async function generateBarcodes(barcodeArr) {
 
     $('#totalBarcodes').text(barcodeArr.length.toString())
 
-    // Split the processing into chunks to prevent blocking
     const chunkSize = 1;
     for (let i = 0; i < barcodeArr.length; i += chunkSize) {
         $('#completedBarcodes').text(i+1)
@@ -29,9 +28,10 @@ async function processBarcodeChunk(chunk) {
                 } else {
                     const barcodeWidth = localStorage.getItem('barcode-width')
                     const barcodeHeight = localStorage.getItem('barcode-height')
-                    const barcodeMargin = localStorage.getItem('barcode-margin')
+                    const barcodeRowMargin = localStorage.getItem('barcode-row-margin')
+                    const barcodeColumnMargin = localStorage.getItem('barcode-column-margin')
                     $('#barcode-container').append(`<img class="barcode-img" id="barcode-${barcode}">`)
-                    $('.barcode-img').attr('style', `width: ${barcodeWidth}px; height: ${barcodeHeight}px; padding-left: ${barcodeMargin}px;`)
+                    $('.barcode-img').attr('style', `width: ${barcodeWidth}px; height: ${barcodeHeight}px; padding-left: ${barcodeRowMargin}px; padding-bottom: ${barcodeColumnMargin}`)
                     JsBarcode(`#barcode-${barcode}`, `${barcode}`)
                 }
             });
@@ -43,8 +43,9 @@ async function processBarcodeChunk(chunk) {
 let updateBarcodeSize = () => {
     let barcodeWidth = localStorage.getItem('barcode-width')
     let barcodeHeight = localStorage.getItem('barcode-height')
-    let barcodeMargin = localStorage.getItem('barcode-margin')
-    $('.barcode-img').attr('style', `width: ${barcodeWidth}px; height: ${barcodeHeight}px; padding-left: ${barcodeMargin}px;`)
+    let barcodeRowMargin = localStorage.getItem('barcode-row-margin')
+    let barcodeColumnMargin = localStorage.getItem('barcode-column-margin')
+    $('.barcode-img').attr('style', `width: ${barcodeWidth}px; height: ${barcodeHeight}px; padding-left: ${barcodeRowMargin}px; padding-bottom: ${barcodeColumnMargin}px;`)
 }
 
 let checkLocalStorage = () => {
@@ -54,12 +55,16 @@ let checkLocalStorage = () => {
     if(localStorage.getItem('barcode-height') == undefined || localStorage.getItem('barcode-height') == ''){
         localStorage.setItem('barcode-height', '100')
     }
-    if(localStorage.getItem('barcode-margin') == undefined || localStorage.getItem('barcode-margin') == ''){
-        localStorage.setItem('barcode-margin', '4')
+    if(localStorage.getItem('barcode-row-margin') == undefined || localStorage.getItem('barcode-row-margin') == ''){
+        localStorage.setItem('barcode-row-margin', '4')
+    }
+    if(localStorage.getItem('barcode-column-margin') == undefined || localStorage.getItem('barcode-column-margin') == ''){
+        localStorage.setItem('barcode-column-margin', '4')
     }
     $('#barcode-width-input').val(localStorage.getItem('barcode-width'))
     $('#barcode-height-input').val(localStorage.getItem('barcode-height'))
-    $('#barcode-margin-input').val(localStorage.getItem('barcode-margin'))
+    $('#barcode-row-margin-input').val(localStorage.getItem('barcode-row-margin'))
+    $('#barcode-column-margin-input').val(localStorage.getItem('barcode-column-margin'))
 }
 
 async function processCSV(file) {
@@ -121,8 +126,11 @@ $(document).ready(function(){
         if(selectedInput == 'barcode-height-input'){
             localStorage.setItem('barcode-height', selectedValue)
         }
-        if(selectedInput == 'barcode-margin-input'){
-            localStorage.setItem('barcode-margin', selectedValue)
+        if(selectedInput == 'barcode-row-margin-input'){
+            localStorage.setItem('barcode-row-margin', selectedValue)
+        }
+        if(selectedInput == 'barcode-column-margin-input'){
+            localStorage.setItem('barcode-column-margin', selectedValue)
         }
         updateBarcodeSize()
     })

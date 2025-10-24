@@ -10,7 +10,7 @@
 </head>
 <body>
 
-    <div style="z-index: 1;" class="spinner-bg"></div>
+    <div class="spinner-bg"></div>
 
     <div class="icon" id="hide-input-icon">
         <img style="width:22px; position: fixed; top:42px; right:10px; opacity: 0.5;" src="./images/hide.png">
@@ -26,10 +26,15 @@
 
     <div id="input-container">
         <input id="barcode-input" type="file">
-        <div id="barcode-settings" style="background: rgba(255,255,255,0.2);">
-            <div class="barcode-settings-text">width:</div> <input type="number" class="barcode-size-input" id="barcode-width-input"><br>
-            <div class="barcode-settings-text">height:</div> <input type="number" class="barcode-size-input" id="barcode-height-input"><br>
-            <div class="barcode-settings-text">spacing:</div> <input type="number" class="barcode-size-input" id="barcode-margin-input"><br>
+        <div id="barcode-settings">
+            <div style="position: relative; float: left;">
+                <div class="barcode-settings-text" style="width: 60px;">width:</div> <input type="number" class="barcode-size-input" id="barcode-width-input"><br>
+                <div class="barcode-settings-text" style="width: 60px;">height:</div> <input type="number" class="barcode-size-input" id="barcode-height-input"><br>
+            </div>
+            <div style="position: relative; float: right;">
+                <div class="barcode-settings-text">row space:</div> <input type="number" class="barcode-size-input" id="barcode-row-margin-input"><br>
+                <div class="barcode-settings-text">column space:</div> <input type="number" class="barcode-size-input" id="barcode-column-margin-input"><br>
+            </div>
         </div>
     </div>
     
